@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="webrtc.js"></script>
+  </head>
+
+  <body>
+    <video id="localVideo" autoplay muted style="width:40%; border: 1px solid black"></video>
+    <video id="remoteVideo" playsinline autoplay style="width:40%; border: 1px solid red"></video>
+
+    <br />
+
+    <input type="button" id="start" onclick="StartProducing()" value="Start Video as Producer"></input>
+    <input type="button" id="start" onclick="StartConsuming()" value="Watch Video as Consumer"></input>
+
+    <script type="text/javascript">
+        function StartProducing() {
+          console.log('Starting to produce');
+          new RTCProducer();
+        }
+        function StartConsuming() {
+          new RTCConsumer();
+        }
+    </script>
+  </body>
+</html>
